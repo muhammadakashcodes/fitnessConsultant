@@ -1,510 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurelian Performance — Elite Human Optimization</title>
-<meta name="description" content="Bespoke performance coaching for executives, founders, and athletes who refuse to compromise.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONARCH — Elite Fitness Architecture for High-Performers</title>
+  <meta name="description"
+    content="A private performance practice for founders, executives, and operators who treat the body as infrastructure. Twelve clients. No exceptions.">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: Syne for display (fashion-editorial geometric character), Inter for body/data -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          gold: {
-            50: '#faf6ea',
-            100: '#f2e8c9',
-            200: '#e6d29a',
-            300: '#dcbd6f',
-            400: '#D4AF37',
-            500: '#bc9a2e',
-            600: '#997c25',
-            700: '#75601c',
-          },
-        },
-        fontFamily: {
-          serif: ['"Cormorant Garamond"', 'serif'],
-          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-        },
-        letterSpacing: {
-          widest2: '.3em',
-        },
-      },
-    },
-  };
-</script>
+  <link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-zinc-950 text-zinc-50 antialiased">
+<body class="antialiased">
 
-<!-- ============================================================ -->
-<!-- NAVIGATION -->
-<!-- ============================================================ -->
-<header id="siteHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-500 border-b border-white/0">
-  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
-    <a href="#hero" class="flex items-center gap-3 group">
-      <span class="w-9 h-9 rounded-full border border-gold-400/60 flex items-center justify-center">
-        <span class="w-2 h-2 rounded-full bg-gold-400"></span>
-      </span>
-      <span class="font-serif text-xl md:text-2xl tracking-wide">Aurelian <span class="text-gold-400 italic">Performance</span></span>
-    </a>
+  <div class="ambient-glow"></div>
 
-    <div class="hidden lg:flex items-center gap-10 text-sm tracking-wide text-zinc-300">
-      <a href="#pillars" class="nav-link">The Pillars</a>
-      <a href="#proof" class="nav-link">Case Studies</a>
-      <a href="#experience" class="nav-link">The Experience</a>
-      <a href="#apply" class="nav-link">Application</a>
-    </div>
-
-    <div class="hidden lg:block">
-      <a href="#apply" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm border border-gold-400 text-gold-400 text-sm tracking-wide hover:bg-gold-400 hover:text-zinc-950 transition-colors duration-500">
-        Book Consultation
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
+      <a href="#top" class="font-display font-800 text-xl tracking-tight text-white">
+        M<span class="text-[var(--lime)]">◆</span>N
       </a>
-    </div>
 
-    <!-- Mobile burger -->
-    <button id="burgerBtn" aria-label="Open menu" aria-expanded="false" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative z-50">
-      <span id="barTop" class="w-6 h-px bg-zinc-50 transition-transform duration-500"></span>
-      <span id="barMid" class="w-6 h-px bg-zinc-50 transition-opacity duration-300"></span>
-      <span id="barBot" class="w-6 h-px bg-zinc-50 transition-transform duration-500"></span>
-    </button>
+      <div class="hidden md:flex items-center gap-10 font-mono text-xs tracking-[0.15em] uppercase text-zinc-300">
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="#matrix" class="nav-link">Results</a>
+        <a href="#access" class="nav-link">Exclusive Access</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#apply" class="hidden md:inline-flex btn-glow font-medium text-sm px-6 py-2.5 rounded-full">
+          Apply Now
+        </a>
+        <button id="menu-toggle" class="md:hidden text-white" aria-label="Open menu" aria-expanded="false">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
   </nav>
-</header>
 
-<!-- Mobile menu overlay -->
-<div id="mobileMenu" class="hidden-menu fixed inset-0 z-40 bg-zinc-950/98 backdrop-blur-xl lg:hidden flex flex-col items-center justify-center gap-8">
-  <a href="#pillars" class="menu-item font-serif text-3xl">The Pillars</a>
-  <a href="#proof" class="menu-item font-serif text-3xl" style="transition-delay:.06s">Case Studies</a>
-  <a href="#experience" class="menu-item font-serif text-3xl" style="transition-delay:.12s">The Experience</a>
-  <a href="#apply" class="menu-item font-serif text-3xl" style="transition-delay:.18s">Application</a>
-  <a href="#apply" class="menu-item mt-6 px-8 py-3 border border-gold-400 text-gold-400 rounded-sm tracking-wide" style="transition-delay:.24s">Book Consultation</a>
-</div>
-
-<!-- ============================================================ -->
-<!-- HERO -->
-<!-- ============================================================ -->
-<section id="hero" class="relative min-h-screen flex items-center overflow-hidden grain">
-
-  <!-- Ambient mesh gradient -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.12),_transparent_55%),radial-gradient(ellipse_at_bottom_left,_rgba(153,124,37,0.10),_transparent_50%)]"></div>
-
-  <!-- Signature contour-line topography field -->
-  <div class="contour-field opacity-70">
-    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="contourGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#D4AF37"/>
-          <stop offset="100%" stop-color="#f2e8c9"/>
-        </linearGradient>
-      </defs>
-      <path class="contour-line" d="M-50,300 C150,250 250,400 450,340 C650,280 750,420 1050,360"/>
-      <path class="contour-line" d="M-50,420 C180,380 300,500 480,460 C700,410 780,540 1050,480" style="animation-delay:-8s"/>
-      <path class="contour-line" d="M-50,540 C160,600 320,480 500,560 C680,640 820,520 1050,580" style="animation-delay:-16s"/>
-      <path class="contour-line" d="M-50,660 C200,610 340,720 520,670 C700,620 840,730 1050,680" style="animation-delay:-24s"/>
-      <path class="contour-line" d="M-50,760 C220,820 360,700 540,770 C720,840 860,710 1050,780" style="animation-delay:-30s"/>
-    </svg>
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-20 grid lg:grid-cols-5 gap-12 items-center w-full">
-
-    <div class="lg:col-span-3">
-      <p class="reveal text-gold-400 text-xs md:text-sm tracking-widest2 uppercase mb-6">Private Coaching · By Application Only</p>
-
-      <h1 class="reveal reveal-delay-1 font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02] tracking-tight">
-        Architecting <span class="gold-text italic">Elite</span><br class="hidden sm:block"> Human Performance
-      </h1>
-
-      <p class="reveal reveal-delay-2 mt-8 text-zinc-400 text-lg md:text-xl max-w-xl leading-relaxed">
-        A precision coaching practice for founders, executives, and competitive athletes who measure their body the way they measure their business — by outcomes, not effort.
-      </p>
-
-      <div class="reveal reveal-delay-3 mt-10 flex flex-col sm:flex-row gap-4">
-        <a href="#apply" class="text-center px-8 py-4 rounded-sm bg-gold-400 text-zinc-950 font-medium tracking-wide hover:bg-gold-300 transition-colors duration-500">
-          Apply for Elite Coaching
-        </a>
-        <a href="#pillars" class="text-center px-8 py-4 rounded-sm border border-white/15 text-zinc-100 tracking-wide hover:border-gold-400/60 hover:text-gold-300 transition-colors duration-500">
-          Explore the Method
-        </a>
-      </div>
-
-      <div class="reveal reveal-delay-3 mt-14 flex items-center gap-6 text-zinc-500 text-sm">
-        <div class="flex -space-x-3">
-          <span class="w-9 h-9 rounded-full bg-zinc-800 border border-zinc-700"></span>
-          <span class="w-9 h-9 rounded-full bg-zinc-700 border border-zinc-700"></span>
-          <span class="w-9 h-9 rounded-full bg-zinc-800 border border-zinc-700"></span>
-        </div>
-        <span>Trusted by C-suite leaders across 14 industries</span>
-      </div>
+  <!-- ============ MOBILE MENU OVERLAY ============ -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] glass-strong invisible opacity-0 md:hidden">
+    <div class="flex justify-end p-6">
+      <button id="menu-close" class="text-white" aria-label="Close menu">
+        <i data-lucide="x" class="w-7 h-7"></i>
+      </button>
     </div>
-
-    <div class="lg:col-span-2 reveal reveal-delay-2">
-      <div class="relative img-parallax-wrap rounded-sm overflow-hidden border border-white/10">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop"
-             alt="Athlete in low-light training session"
-             class="img-parallax w-full h-[520px] md:h-[620px] object-cover grayscale contrast-125">
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/10 to-transparent"></div>
-        <div class="absolute bottom-6 left-6 right-6 glass rounded-sm p-4">
-          <p class="font-serif text-2xl text-gold-300 italic">−11.4%</p>
-          <p class="text-zinc-400 text-xs tracking-wide uppercase mt-1">Median body-fat reduction, 90-day protocol</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <a href="#authority" aria-label="Scroll to explore" class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-zinc-500 text-xs tracking-widest2 uppercase">
-    Scroll
-    <span class="w-px h-10 bg-gradient-to-b from-gold-400 to-transparent"></span>
-  </a>
-</section>
-
-<!-- ============================================================ -->
-<!-- AUTHORITY STRIP -->
-<!-- ============================================================ -->
-<section id="authority" class="border-y border-white/10 bg-zinc-900/40 py-6 overflow-hidden">
-  <div class="marquee-track">
-    <div class="flex items-center gap-16 pr-16 text-zinc-400 text-sm tracking-widest2 uppercase whitespace-nowrap">
-      <span>15+ Years Elite Practice</span>
-      <span class="text-gold-400">•</span>
-      <span>500+ Transformations Delivered</span>
-      <span class="text-gold-400">•</span>
-      <span>Featured in Vogue &amp; GQ</span>
-      <span class="text-gold-400">•</span>
-      <span>Advisor to Fortune 500 Executives</span>
-      <span class="text-gold-400">•</span>
-      <span>Physiology Certified · ACSM &amp; NASM</span>
-      <span class="text-gold-400">•</span>
-    </div>
-    <div class="flex items-center gap-16 pr-16 text-zinc-400 text-sm tracking-widest2 uppercase whitespace-nowrap" aria-hidden="true">
-      <span>15+ Years Elite Practice</span>
-      <span class="text-gold-400">•</span>
-      <span>500+ Transformations Delivered</span>
-      <span class="text-gold-400">•</span>
-      <span>Featured in Vogue &amp; GQ</span>
-      <span class="text-gold-400">•</span>
-      <span>Advisor to Fortune 500 Executives</span>
-      <span class="text-gold-400">•</span>
-      <span>Physiology Certified · ACSM &amp; NASM</span>
-      <span class="text-gold-400">•</span>
+    <div class="flex flex-col items-center justify-center gap-8 h-[70%] font-display text-3xl">
+      <a href="#philosophy" class="menu-item nav-close text-white">Philosophy</a>
+      <a href="#programs" class="menu-item nav-close text-white">Programs</a>
+      <a href="#matrix" class="menu-item nav-close text-white">Results</a>
+      <a href="#access" class="menu-item nav-close text-white">Exclusive Access</a>
+      <a href="#apply"
+        class="menu-item nav-close btn-glow font-sans text-base font-medium px-8 py-3 rounded-full mt-4">Apply Now</a>
     </div>
   </div>
-</section>
 
-<!-- ============================================================ -->
-<!-- PILLARS OF TRANSFORMATION -->
-<!-- ============================================================ -->
-<section id="pillars" class="relative py-28 md:py-36 px-6 md:px-10 max-w-7xl mx-auto">
-  <div class="reveal max-w-2xl mb-16">
-    <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">The Method</p>
-    <h2 class="font-serif text-4xl md:text-5xl leading-tight">The Three Pillars of Transformation</h2>
-    <p class="text-zinc-400 mt-5 text-lg">Every protocol is built on three disciplines, calibrated to the demands of a life with no margin for wasted effort.</p>
-  </div>
+  <main id="top" class="relative z-10">
 
-  <div class="grid md:grid-cols-3 gap-6">
+    <!-- ============ HERO ============ -->
+    <section class="relative min-h-screen flex items-center pt-32 pb-20 px-6 md:px-10">
+      <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-10 items-center">
 
-    <!-- Card 1 -->
-    <div class="reveal reveal-delay-1 lift-card group relative rounded-sm border border-white/10 bg-zinc-900/50 p-8 flex flex-col">
-      <div class="w-12 h-12 rounded-full border border-gold-400/40 flex items-center justify-center mb-8 group-hover:border-gold-400 transition-colors duration-500">
-        <i data-lucide="leaf" class="w-5 h-5 text-gold-400"></i>
-      </div>
-      <h3 class="font-serif text-2xl mb-3">Bespoke Nutrition</h3>
-      <p class="text-zinc-400 leading-relaxed flex-1">Metabolic profiling and a fully individualized nutrition architecture — no templates, no generic macros. Built around your travel schedule, palate, and biochemistry.</p>
-      <span class="mt-8 text-xs tracking-widest2 uppercase text-zinc-600">Discipline 01</span>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="reveal reveal-delay-2 lift-card group relative rounded-sm border border-white/10 bg-zinc-900/50 p-8 flex flex-col">
-      <div class="w-12 h-12 rounded-full border border-gold-400/40 flex items-center justify-center mb-8 group-hover:border-gold-400 transition-colors duration-500">
-        <i data-lucide="activity" class="w-5 h-5 text-gold-400"></i>
-      </div>
-      <h3 class="font-serif text-2xl mb-3">Elite Biomechanics</h3>
-      <p class="text-zinc-400 leading-relaxed flex-1">Motion-capture assessment and strength programming engineered for longevity, not just aesthetics — correcting imbalances before they become injuries.</p>
-      <span class="mt-8 text-xs tracking-widest2 uppercase text-zinc-600">Discipline 02</span>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="reveal reveal-delay-3 lift-card group relative rounded-sm border border-white/10 bg-zinc-900/50 p-8 flex flex-col">
-      <div class="w-12 h-12 rounded-full border border-gold-400/40 flex items-center justify-center mb-8 group-hover:border-gold-400 transition-colors duration-500">
-        <i data-lucide="moon-star" class="w-5 h-5 text-gold-400"></i>
-      </div>
-      <h3 class="font-serif text-2xl mb-3">Executive Lifestyle Optimization</h3>
-      <p class="text-zinc-400 leading-relaxed flex-1">Sleep architecture, stress load, and recovery protocols managed alongside your calendar — so performance holds through board meetings and red-eyes alike.</p>
-      <span class="mt-8 text-xs tracking-widest2 uppercase text-zinc-600">Discipline 03</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- PROOF / CASE STUDIES -->
-<!-- ============================================================ -->
-<section id="proof" class="relative py-28 md:py-36 bg-zinc-900/30 border-y border-white/10">
-  <div class="max-w-7xl mx-auto px-6 md:px-10">
-
-    <div class="reveal max-w-2xl mb-16">
-      <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">The Proof</p>
-      <h2 class="font-serif text-4xl md:text-5xl leading-tight">Case Studies in Discipline</h2>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-6">
-
-      <!-- Case Study 1 -->
-      <div class="reveal reveal-delay-1 rounded-sm border border-white/10 bg-zinc-950/60 overflow-hidden flex flex-col">
-        <div class="img-parallax-wrap overflow-hidden h-56">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop" alt="Executive client training session" class="img-parallax w-full h-full object-cover grayscale">
-        </div>
-        <div class="p-7 flex-1 flex flex-col">
-          <div class="flex items-center justify-between text-sm text-zinc-500 mb-4">
-            <span>Managing Partner, PE Fund</span>
-            <span class="text-gold-400">18 Weeks</span>
+        <div class="lg:col-span-7">
+          <div class="reveal flex items-center gap-3 mb-8 font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">
+            <span class="w-2 h-2 rounded-full bg-[var(--lime)] animate-pulse"></span>
+            By application only — Cohort closes at 12
           </div>
-          <p class="text-zinc-300 leading-relaxed flex-1">"I stopped treating my body as an afterthought. The protocol restructured how I train, eat, and recover around a 70-hour week — the results outpaced anything I'd tried in a decade."</p>
-          <div class="mt-6 flex gap-8 pt-6 border-t border-white/10 text-sm">
-            <div><p class="font-serif text-2xl text-gold-300">-14kg</p><p class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Fat Mass</p></div>
-            <div><p class="font-serif text-2xl text-gold-300">+22%</p><p class="text-zinc-500 text-xs uppercase tracking-wide mt-1">VO2 Max</p></div>
+
+          <h1 class="reveal font-display font-800 leading-[0.95] text-white">
+            <span class="block text-[13vw] sm:text-[9vw] lg:text-[5.2vw]">SCULPTING</span>
+            <span class="block text-[13vw] sm:text-[9vw] lg:text-[5.2vw] text-zinc-500">THE ELITE.</span>
+          </h1>
+
+          <p class="reveal mt-8 max-w-xl text-base md:text-lg font-light text-zinc-400 leading-relaxed">
+            A private performance practice for founders, executives, and operators who treat the body as infrastructure.
+            Bio-marker-driven programming, absolute discretion, and a single point of contact — for the twelve people we
+            accept this quarter.
+          </p>
+
+          <div class="reveal mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <a href="#apply" class="btn-glow font-medium px-8 py-4 rounded-full inline-flex items-center gap-2">
+              Secure Your Consultation
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+            <button id="play-btn" class="group flex items-center gap-3 text-sm text-zinc-300">
+              <span
+                class="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[var(--lime)]/60 transition-colors">
+                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+              </span>
+              Watch the Method
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative reveal">
+          <div class="glass rounded-2xl p-6 mb-5 card-hover">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Cohort Status</span>
+              <i data-lucide="lock" class="w-3.5 h-3.5 text-zinc-500"></i>
+            </div>
+            <div class="flex items-end justify-between">
+              <span class="font-display text-4xl font-700 text-white">3<span class="text-zinc-600">/12</span></span>
+              <span class="font-mono text-xs text-[var(--lime)]">Openings left</span>
+            </div>
+            <div class="mt-4 h-1 rounded-full bg-white/5 overflow-hidden">
+              <div class="h-full bg-[var(--lime)] rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 mb-5 card-hover">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Client Retention Rate</span>
+            <div class="flex items-end justify-between mt-3">
+              <span class="font-display text-4xl font-700 text-white">100<span
+                  class="text-zinc-500 text-2xl">%</span></span>
+              <i data-lucide="trending-up" class="w-5 h-5 text-[var(--lime)]"></i>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 card-hover">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Avg. Time to First Result</span>
+            <div class="flex items-end justify-between mt-3">
+              <span class="font-display text-4xl font-700 text-white">21<span class="text-zinc-500 text-xl">
+                  days</span></span>
+              <i data-lucide="activity" class="w-5 h-5 text-cyan-400/70"></i>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Case Study 2 -->
-      <div class="reveal reveal-delay-2 rounded-sm border border-white/10 bg-zinc-950/60 overflow-hidden flex flex-col">
-        <div class="img-parallax-wrap overflow-hidden h-56">
-          <img src="https://images.unsplash.com/photo-1584466977773-e625c37cdd50?q=80&w=900&auto=format&fit=crop" alt="Founder client strength training" class="img-parallax w-full h-full object-cover grayscale">
-        </div>
-        <div class="p-7 flex-1 flex flex-col">
-          <div class="flex items-center justify-between text-sm text-zinc-500 mb-4">
-            <span>Founder &amp; CEO, SaaS</span>
-            <span class="text-gold-400">26 Weeks</span>
-          </div>
-          <p class="text-zinc-300 leading-relaxed flex-1">"Between fundraising and travel, I'd written off strength training as impossible. The executive optimization framework proved otherwise — my energy in the afternoons has completely changed."</p>
-          <div class="mt-6 flex gap-8 pt-6 border-t border-white/10 text-sm">
-            <div><p class="font-serif text-2xl text-gold-300">+9kg</p><p class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Lean Mass</p></div>
-            <div><p class="font-serif text-2xl text-gold-300">-31%</p><p class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Resting Cortisol</p></div>
-          </div>
-        </div>
-      </div>
+    <!-- ============ PHILOSOPHY / TRUST ============ -->
+    <section id="philosophy" class="relative py-28 px-6 md:px-10 border-t border-white/[0.06]">
+      <div class="max-w-7xl mx-auto">
 
-      <!-- Case Study 3 -->
-      <div class="reveal reveal-delay-3 rounded-sm border border-white/10 bg-zinc-950/60 overflow-hidden flex flex-col">
-        <div class="img-parallax-wrap overflow-hidden h-56">
-          <img src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?q=80&w=900&auto=format&fit=crop" alt="Competitive athlete client" class="img-parallax w-full h-full object-cover grayscale">
+        <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <h2 class="font-display font-700 text-3xl md:text-5xl text-white max-w-2xl leading-tight">
+            Featured in the rooms where performance is currency.
+          </h2>
+          <span class="font-mono text-xs uppercase tracking-widest text-zinc-500 whitespace-nowrap">As referenced
+            by</span>
         </div>
-        <div class="p-7 flex-1 flex flex-col">
-          <div class="flex items-center justify-between text-sm text-zinc-500 mb-4">
-            <span>Masters Triathlete, 44</span>
-            <span class="text-gold-400">40 Weeks</span>
-          </div>
-          <p class="text-zinc-300 leading-relaxed flex-1">"The biomechanics assessment found a hip imbalance that had capped my run splits for years. Correcting it, alongside the periodized plan, took me to a podium finish."</p>
-          <div class="mt-6 flex gap-8 pt-6 border-t border-white/10 text-sm">
-            <div><p class="font-serif text-2xl text-gold-300">-6:12</p><p class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Marathon Split</p></div>
-            <div><p class="font-serif text-2xl text-gold-300">#1</p><p class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Age Group</p></div>
+
+        <div class="reveal overflow-hidden mb-24 border-y border-white/[0.06] py-6">
+          <div class="marquee-track gap-16 font-display text-2xl text-zinc-600 whitespace-nowrap">
+            <span>APEX CAPITAL</span><span>FOUNDER'S QUARTERLY</span><span>THE OPERATOR'S DESK</span><span>VANTAGE
+              REVIEW</span><span>NORTHBRIDGE</span>
+            <span>APEX CAPITAL</span><span>FOUNDER'S QUARTERLY</span><span>THE OPERATOR'S DESK</span><span>VANTAGE
+              REVIEW</span><span>NORTHBRIDGE</span>
           </div>
         </div>
-      </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- THE EXPERIENCE / PROCESS TIMELINE -->
-<!-- ============================================================ -->
-<section id="experience" class="relative py-28 md:py-36 px-6 md:px-10 max-w-7xl mx-auto">
-  <div class="reveal max-w-2xl mb-20">
-    <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">The Experience</p>
-    <h2 class="font-serif text-4xl md:text-5xl leading-tight">From Application to Elite Results</h2>
-  </div>
-
-  <div class="relative">
-    <!-- vertical line (desktop) -->
-    <div class="hidden md:block absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-gold-400/60 via-white/10 to-transparent"></div>
-
-    <div class="space-y-14 md:space-y-20">
-
-      <div class="reveal reveal-delay-1 flex flex-col md:flex-row gap-6 md:gap-12">
-        <div class="flex md:flex-col items-center gap-4 md:gap-2 md:w-14 shrink-0">
-          <span class="w-14 h-14 rounded-full border border-gold-400/50 flex items-center justify-center font-serif text-xl text-gold-300 bg-zinc-950">01</span>
-        </div>
-        <div class="md:pt-3">
-          <h3 class="font-serif text-2xl md:text-3xl mb-2">Application &amp; Discovery Call</h3>
-          <p class="text-zinc-400 max-w-xl leading-relaxed">A confidential intake and 45-minute discovery call to assess readiness, goals, and whether the practice is the right fit — for both sides.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="reveal glass rounded-2xl p-8 card-hover">
+            <div class="w-11 h-11 rounded-full bg-[var(--lime)]/10 flex items-center justify-center mb-6">
+              <i data-lucide="dna" class="w-5 h-5 text-[var(--lime)]"></i>
+            </div>
+            <h3 class="font-display font-700 text-lg text-white mb-3">Bespoke Bio-Hacking</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed font-light">Programming built from your blood panel, sleep
+              architecture, and recovery data — not a template pulled off a shelf.</p>
+          </div>
+          <div class="reveal glass rounded-2xl p-8 card-hover">
+            <div class="w-11 h-11 rounded-full bg-cyan-400/10 flex items-center justify-center mb-6">
+              <i data-lucide="phone-call" class="w-5 h-5 text-cyan-300"></i>
+            </div>
+            <h3 class="font-display font-700 text-lg text-white mb-3">24/7 Concierge Support</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed font-light">One direct line to your coach — pre-flight
+              adjustments, jet-lag protocols, and same-day reprogramming when life doesn't cooperate.</p>
+          </div>
+          <div class="reveal glass rounded-2xl p-8 card-hover">
+            <div class="w-11 h-11 rounded-full bg-[var(--lime)]/10 flex items-center justify-center mb-6">
+              <i data-lucide="utensils" class="w-5 h-5 text-[var(--lime)]"></i>
+            </div>
+            <h3 class="font-display font-700 text-lg text-white mb-3">Elite Nutritional Architecture</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed font-light">Meal design coordinated with your private chef
+              or delivery service, calibrated weekly against your metrics — never a generic macro sheet.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="reveal reveal-delay-2 flex flex-col md:flex-row gap-6 md:gap-12">
-        <div class="flex md:flex-col items-center gap-4 md:gap-2 md:w-14 shrink-0">
-          <span class="w-14 h-14 rounded-full border border-gold-400/50 flex items-center justify-center font-serif text-xl text-gold-300 bg-zinc-950">02</span>
+    <!-- ============ THE TRANSFORMATION MATRIX (signature interactive element) ============ -->
+    <section id="matrix" class="relative py-28 px-6 md:px-10 border-t border-white/[0.06]">
+      <div class="max-w-7xl mx-auto">
+        <div class="reveal mb-14">
+          <span class="font-mono text-xs uppercase tracking-widest text-[var(--lime)]">Results</span>
+          <h2 class="font-display font-700 text-3xl md:text-5xl text-white mt-3">The Transformation Matrix</h2>
+          <p class="text-zinc-400 font-light mt-4 max-w-xl">Real client bio-metrics, twelve weeks apart. Select a metric
+            to see the shift.</p>
         </div>
-        <div class="md:pt-3">
-          <h3 class="font-serif text-2xl md:text-3xl mb-2">Full Diagnostic Assessment</h3>
-          <p class="text-zinc-400 max-w-xl leading-relaxed">Body composition scan, biomechanics screening, and metabolic testing establish your baseline — the data foundation every protocol is built from.</p>
+
+        <div class="reveal glass-strong rounded-3xl p-6 md:p-10">
+          <div class="flex flex-wrap gap-3 mb-10" id="matrix-tabs">
+            <button data-metric="strength"
+              class="matrix-tab active-tab font-mono text-xs uppercase tracking-widest px-5 py-2.5 rounded-full border border-white/10 text-white">Relative
+              Strength</button>
+            <button data-metric="recovery"
+              class="matrix-tab font-mono text-xs uppercase tracking-widest px-5 py-2.5 rounded-full border border-white/10 text-zinc-500">HRV
+              Recovery</button>
+            <button data-metric="composition"
+              class="matrix-tab font-mono text-xs uppercase tracking-widest px-5 py-2.5 rounded-full border border-white/10 text-zinc-500">Body
+              Composition</button>
+            <button data-metric="vo2"
+              class="matrix-tab font-mono text-xs uppercase tracking-widest px-5 py-2.5 rounded-full border border-white/10 text-zinc-500">VO2
+              Max</button>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-10 items-end">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-zinc-500 uppercase tracking-widest">Week 0</span>
+                <span class="font-mono text-xs text-zinc-500 uppercase tracking-widest">Week 12</span>
+              </div>
+              <div class="flex items-end gap-4 h-52" id="matrix-bars">
+                <div class="matrix-bar flex-1 bg-white/10 rounded-t-lg" style="height: 35%"></div>
+                <div class="matrix-bar flex-1 bg-white/10 rounded-t-lg" style="height: 42%"></div>
+                <div class="matrix-bar flex-1 bg-white/10 rounded-t-lg" style="height: 38%"></div>
+                <div class="w-px bg-white/10 self-stretch mx-2"></div>
+                <div class="matrix-bar flex-1 bg-[var(--lime)]/80 rounded-t-lg" style="height: 78%"></div>
+                <div class="matrix-bar flex-1 bg-[var(--lime)]/80 rounded-t-lg" style="height: 88%"></div>
+                <div class="matrix-bar flex-1 bg-[var(--lime)]/80 rounded-t-lg" style="height: 95%"></div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div>
+                <span class="font-mono text-xs text-zinc-500 uppercase tracking-widest">Metric</span>
+                <p id="matrix-label" class="font-display text-2xl text-white mt-1">Relative Strength Index</p>
+              </div>
+              <div class="flex items-baseline gap-3">
+                <span id="matrix-value" class="font-display text-6xl font-800 text-[var(--lime)]">+61%</span>
+                <span class="text-zinc-500 font-light">average client gain</span>
+              </div>
+              <p id="matrix-desc" class="text-sm text-zinc-400 font-light leading-relaxed max-w-md">Measured as load
+                moved relative to bodyweight across primary compound lifts, averaged across the current cohort at week
+                12.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="reveal reveal-delay-3 flex flex-col md:flex-row gap-6 md:gap-12">
-        <div class="flex md:flex-col items-center gap-4 md:gap-2 md:w-14 shrink-0">
-          <span class="w-14 h-14 rounded-full border border-gold-400/50 flex items-center justify-center font-serif text-xl text-gold-300 bg-zinc-950">03</span>
+    <!-- ============ PROGRAMS / TIERED INVESTMENT ============ -->
+    <section id="programs" class="relative py-28 px-6 md:px-10 border-t border-white/[0.06]">
+      <div class="max-w-7xl mx-auto">
+        <div class="reveal mb-16 text-center">
+          <span class="font-mono text-xs uppercase tracking-widest text-[var(--lime)]">Investment</span>
+          <h2 class="font-display font-700 text-3xl md:text-5xl text-white mt-3">Two ways in. Twelve seats total.</h2>
         </div>
-        <div class="md:pt-3">
-          <h3 class="font-serif text-2xl md:text-3xl mb-2">Bespoke Protocol Design</h3>
-          <p class="text-zinc-400 max-w-xl leading-relaxed">Your nutrition, training, and recovery architecture is built entirely around your data, schedule, and preferences — delivered inside a private client portal.</p>
+
+        <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+          <!-- Elite Tier -->
+          <div class="reveal glass rounded-3xl p-10 card-hover flex flex-col">
+            <span class="font-mono text-xs uppercase tracking-widest text-zinc-500">Elite Tier</span>
+            <div class="flex items-baseline gap-2 mt-4 mb-8">
+              <span class="font-display text-5xl font-800 text-white">$4,200</span>
+              <span class="text-zinc-500 font-light">/ month</span>
+            </div>
+            <ul class="space-y-4 text-sm text-zinc-300 font-light flex-1">
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Bi-weekly 1:1 programming review</li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Quarterly full bio-marker panel</li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Nutritional architecture, updated monthly</li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Business-hours coach messaging</li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Recovery & sleep protocol design</li>
+            </ul>
+            <a href="#apply"
+              class="mt-10 text-center border border-white/15 rounded-full py-4 font-medium text-sm hover:border-[var(--lime)]/50 transition-colors">Apply
+              for Elite</a>
+          </div>
+
+          <!-- Monarch / Concierge Tier -->
+          <div class="reveal relative glass-strong rounded-3xl p-10 flex flex-col overflow-hidden"
+            style="border-color: rgba(204,255,0,0.3);">
+            <div
+              class="absolute top-0 right-0 bg-[var(--lime)] text-black text-[10px] font-mono uppercase tracking-widest px-4 py-1.5 rounded-bl-xl">
+              Most Selected</div>
+            <span class="font-mono text-xs uppercase tracking-widest text-[var(--lime)]">Monarch Concierge</span>
+            <div class="flex items-baseline gap-2 mt-4 mb-8">
+              <span class="font-display text-5xl font-800 text-white">$11,000</span>
+              <span class="text-zinc-500 font-light">/ month</span>
+            </div>
+            <ul class="space-y-4 text-sm text-zinc-200 font-light flex-1">
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Weekly in-person or on-site sessions</li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Monthly full bio-marker + hormone panel</li>
+              <li class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>24/7
+                direct line to your coach</li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Private chef coordination & travel protocols
+              </li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Continuous glucose & HRV monitoring desk</li>
+              <li class="flex gap-3"><i data-lucide="check"
+                  class="w-4 h-4 text-[var(--lime)] shrink-0 mt-0.5"></i>Priority renewal — guaranteed seat next cohort
+              </li>
+            </ul>
+            <a href="#apply" class="btn-glow mt-10 text-center rounded-full py-4 font-medium text-sm">Apply for
+              Monarch</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="reveal flex flex-col md:flex-row gap-6 md:gap-12">
-        <div class="flex md:flex-col items-center gap-4 md:gap-2 md:w-14 shrink-0">
-          <span class="w-14 h-14 rounded-full border border-gold-400 flex items-center justify-center font-serif text-xl text-zinc-950 bg-gold-400">04</span>
+    <!-- ============ APPLICATION FUNNEL ============ -->
+    <section id="apply" class="relative py-28 px-6 md:px-10 border-t border-white/[0.06]">
+      <div class="max-w-3xl mx-auto">
+        <div class="reveal text-center mb-14">
+          <span class="font-mono text-xs uppercase tracking-widest text-[var(--lime)]">Exclusive Access</span>
+          <h2 class="font-display font-700 text-3xl md:text-5xl text-white mt-3">Request your seat.</h2>
+          <p class="text-zinc-400 font-light mt-4">This is an application, not a booking. We respond within 48 hours to
+            candidates who fit the current cohort.</p>
         </div>
-        <div class="md:pt-3">
-          <h3 class="font-serif text-2xl md:text-3xl mb-2">Continuous Elite Coaching</h3>
-          <p class="text-zinc-400 max-w-xl leading-relaxed">Weekly adjustments, direct-line access, and quarterly re-testing keep the protocol sharp as your body, calendar, and goals evolve.</p>
+
+        <form id="apply-form" class="reveal glass-strong rounded-3xl p-8 md:p-12 space-y-8" novalidate>
+
+          <div id="step-1" class="step space-y-6">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-mono text-xs text-[var(--lime)]">01</span>
+              <span class="font-mono text-xs uppercase tracking-widest text-zinc-500">About You</span>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Full
+                  Name</label>
+                <input id="name" type="text" required
+                  class="w-full border border-white/10 rounded-xl px-4 py-3.5 text-white focus:border-[var(--lime)]/50 outline-none transition-colors"
+                  placeholder="Jordan Ellery">
+              </div>
+              <div>
+                <label for="role" class="block text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Current
+                  Role</label>
+                <input id="role" type="text" required
+                  class="w-full border border-white/10 rounded-xl px-4 py-3.5 text-white focus:border-[var(--lime)]/50 outline-none transition-colors"
+                  placeholder="Founder & CEO">
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="email"
+                  class="block text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Email</label>
+                <input id="email" type="email" required
+                  class="w-full border border-white/10 rounded-xl px-4 py-3.5 text-white focus:border-[var(--lime)]/50 outline-none transition-colors"
+                  placeholder="you@company.com">
+              </div>
+              <div>
+                <label for="phone"
+                  class="block text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Phone</label>
+                <input id="phone" type="tel"
+                  class="w-full border border-white/10 rounded-xl px-4 py-3.5 text-white focus:border-[var(--lime)]/50 outline-none transition-colors"
+                  placeholder="+1 (___) ___-____">
+              </div>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/[0.06]"></div>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-mono text-xs text-[var(--lime)]">02</span>
+              <span class="font-mono text-xs uppercase tracking-widest text-zinc-500">Your Objective</span>
+            </div>
+            <div>
+              <label for="tier" class="block text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Tier of
+                Interest</label>
+              <select id="tier"
+                class="w-full border border-white/10 rounded-xl px-4 py-3.5 text-white focus:border-[var(--lime)]/50 outline-none transition-colors">
+                <option class="bg-zinc-900">Elite Tier — $4,200/mo</option>
+                <option class="bg-zinc-900">Monarch Concierge — $11,000/mo</option>
+                <option class="bg-zinc-900">Not sure — advise me</option>
+              </select>
+            </div>
+            <div>
+              <label for="goal" class="block text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">What are
+                you optimizing for?</label>
+              <textarea id="goal" rows="3"
+                class="w-full border border-white/10 rounded-xl px-4 py-3.5 text-white focus:border-[var(--lime)]/50 outline-none transition-colors resize-none"
+                placeholder="Longevity, cognitive output, a specific event, recovering after years of neglect..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit"
+            class="btn-glow w-full rounded-full py-4 font-medium text-sm flex items-center justify-center gap-2">
+            Submit Application
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          <p class="text-center text-xs text-zinc-500 font-mono">Every submission is reviewed personally. Nothing is
+            automated.</p>
+        </form>
+
+        <div id="success-message" class="hidden reveal in glass-strong rounded-3xl p-12 text-center">
+          <div class="w-16 h-16 rounded-full bg-[var(--lime)]/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="check-circle" class="w-8 h-8 text-[var(--lime)]"></i>
+          </div>
+          <h3 class="font-display text-2xl text-white mb-3">Application received.</h3>
+          <p class="text-zinc-400 font-light">We review every submission personally. Expect a response within 48 hours.
+          </p>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+  </main>
 
-<!-- ============================================================ -->
-<!-- FINAL CTA / APPLICATION FORM -->
-<!-- ============================================================ -->
-<section id="apply" class="relative py-28 md:py-36 px-6 md:px-10">
-  <div class="max-w-4xl mx-auto relative rounded-sm border border-gold-400/25 bg-[linear-gradient(180deg,rgba(212,175,55,0.06),rgba(9,9,11,0)_60%)] p-8 md:p-16 overflow-hidden">
-
-    <div class="contour-field opacity-20">
-      <svg viewBox="0 0 1000 400" preserveAspectRatio="none">
-        <path class="contour-line" d="M-50,100 C150,60 250,180 450,120 C650,60 750,180 1050,120"/>
-        <path class="contour-line" d="M-50,220 C180,180 300,300 480,260 C700,210 780,320 1050,270" style="animation-delay:-10s"/>
-      </svg>
-    </div>
-
-    <div class="relative reveal text-center max-w-xl mx-auto mb-12">
-      <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">Limited Availability — 4 Spots Remaining This Quarter</p>
-      <h2 class="font-serif text-4xl md:text-5xl leading-tight">Begin Your Application</h2>
-      <p class="text-zinc-400 mt-5">Coaching capacity is intentionally limited to preserve the level of attention every client receives. Submit your application to be considered for the next intake.</p>
-    </div>
-
-    <form id="applyForm" class="reveal relative grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto" novalidate>
-      <div class="sm:col-span-1">
-        <label for="fullName" class="block text-xs tracking-wide uppercase text-zinc-500 mb-2">Full Name</label>
-        <input id="fullName" name="fullName" type="text" required
-          class="w-full bg-zinc-900/60 border border-white/10 rounded-sm px-4 py-3 text-zinc-100 placeholder-zinc-600 focus:border-gold-400 focus:outline-none transition-colors"
-          placeholder="Jordan Ellery">
-        <p class="error-msg hidden text-red-400 text-xs mt-1.5">Please enter your name.</p>
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative z-10 border-t border-white/[0.06] py-14 px-6 md:px-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-10">
+        <a href="#top" class="font-display font-800 text-lg text-white">MONARCH</a>
+        <div class="flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-widest text-zinc-500">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Engagement</a>
+          <a href="#" class="hover:text-white transition-colors">Confidentiality</a>
+          <a href="#" class="hover:text-white transition-colors">Contact</a>
+        </div>
       </div>
-
-      <div class="sm:col-span-1">
-        <label for="email" class="block text-xs tracking-wide uppercase text-zinc-500 mb-2">Email Address</label>
-        <input id="email" name="email" type="email" required
-          class="w-full bg-zinc-900/60 border border-white/10 rounded-sm px-4 py-3 text-zinc-100 placeholder-zinc-600 focus:border-gold-400 focus:outline-none transition-colors"
-          placeholder="jordan@company.com">
-        <p class="error-msg hidden text-red-400 text-xs mt-1.5">Please enter a valid email.</p>
-      </div>
-
-      <div class="sm:col-span-2">
-        <label for="goal" class="block text-xs tracking-wide uppercase text-zinc-500 mb-2">Primary Goal</label>
-        <select id="goal" name="goal" required
-          class="w-full bg-zinc-900/60 border border-white/10 rounded-sm px-4 py-3 text-zinc-100 focus:border-gold-400 focus:outline-none transition-colors appearance-none">
-          <option value="" disabled selected>Select your primary objective</option>
-          <option value="recomposition">Body Recomposition</option>
-          <option value="performance">Athletic Performance</option>
-          <option value="longevity">Longevity &amp; Executive Health</option>
-          <option value="strength">Strength &amp; Muscle Development</option>
-        </select>
-        <p class="error-msg hidden text-red-400 text-xs mt-1.5">Please select a goal.</p>
-      </div>
-
-      <div class="sm:col-span-2 mt-2">
-        <button type="submit"
-          class="w-full px-8 py-4 rounded-sm bg-gold-400 text-zinc-950 font-medium tracking-wide hover:bg-gold-300 transition-colors duration-500">
-          Secure Your Spot
-        </button>
-        <p id="formSuccess" class="hidden text-center text-gold-300 text-sm mt-4">Application received — expect a reply from our team within 48 hours.</p>
-      </div>
-    </form>
-
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- FOOTER -->
-<!-- ============================================================ -->
-<footer class="border-t border-white/10 bg-zinc-950 px-6 md:px-10 pt-20 pb-10">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
-
-    <div class="md:col-span-1">
-      <a href="#hero" class="flex items-center gap-3 mb-5">
-        <span class="w-9 h-9 rounded-full border border-gold-400/60 flex items-center justify-center">
-          <span class="w-2 h-2 rounded-full bg-gold-400"></span>
-        </span>
-        <span class="font-serif text-xl">Aurelian <span class="text-gold-400 italic">Performance</span></span>
-      </a>
-      <p class="text-zinc-500 text-sm leading-relaxed">Private performance coaching for those who lead at the edge of what's demanding.</p>
-    </div>
-
-    <div>
-      <h4 class="text-xs tracking-widest2 uppercase text-zinc-500 mb-5">Practice</h4>
-      <ul class="space-y-3 text-sm text-zinc-400">
-        <li><a href="#pillars" class="hover:text-gold-300 transition-colors">The Pillars</a></li>
-        <li><a href="#proof" class="hover:text-gold-300 transition-colors">Case Studies</a></li>
-        <li><a href="#experience" class="hover:text-gold-300 transition-colors">The Experience</a></li>
-        <li><a href="#apply" class="hover:text-gold-300 transition-colors">Application</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="text-xs tracking-widest2 uppercase text-zinc-500 mb-5">Legal</h4>
-      <ul class="space-y-3 text-sm text-zinc-400">
-        <li><a href="#" class="hover:text-gold-300 transition-colors">Privacy Policy</a></li>
-        <li><a href="#" class="hover:text-gold-300 transition-colors">Terms of Service</a></li>
-        <li><a href="#" class="hover:text-gold-300 transition-colors">Client Agreement</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="text-xs tracking-widest2 uppercase text-zinc-500 mb-5">Correspondence</h4>
-      <p class="text-zinc-500 text-sm mb-4">Insights on performance, longevity, and discipline — sent occasionally, never generic.</p>
-      <form id="newsletterForm" class="flex gap-2">
-        <label for="newsletterEmail" class="sr-only">Email address</label>
-        <input id="newsletterEmail" type="email" required placeholder="Email address"
-          class="flex-1 min-w-0 bg-zinc-900/60 border border-white/10 rounded-sm px-3 py-2.5 text-sm text-zinc-100 placeholder-zinc-600 focus:border-gold-400 focus:outline-none transition-colors">
-        <button type="submit" aria-label="Subscribe" class="shrink-0 w-11 h-11 flex items-center justify-center rounded-sm border border-gold-400/50 text-gold-400 hover:bg-gold-400 hover:text-zinc-950 transition-colors">
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
-      </form>
-
-      <div class="flex gap-4 mt-6">
-        <a href="#" aria-label="Instagram" class="text-zinc-500 hover:text-gold-300 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-        <a href="#" aria-label="LinkedIn" class="text-zinc-500 hover:text-gold-300 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-        <a href="#" aria-label="X" class="text-zinc-500 hover:text-gold-300 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+      <div
+        class="flex flex-col md:flex-row justify-between gap-4 pt-8 border-t border-white/[0.06] font-mono text-[11px] text-zinc-600">
+        <span>© 2026 Monarch Performance Practice. All rights reserved.</span>
+        <span>Twelve seats. Every quarter. No exceptions.</span>
       </div>
     </div>
+  </footer>
 
-  </div>
-
-  <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
-    <p>&copy; <span id="year"></span> Aurelian Performance. All rights reserved.</p>
-    <p>Coaching results are individual and not guaranteed.</p>
-  </div>
-</footer>
-
-<!-- ============================================================ -->
-<!-- JAVASCRIPT -->
-<!-- ============================================================ -->
-<script src="js/script.js" defer></script>
+  <script src="js/script.js" defer></script>
 
 </body>
+
 </html>
