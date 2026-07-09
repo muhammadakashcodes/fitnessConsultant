@@ -1,0 +1,207 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #09090b;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Fade-up scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.24s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.36s;
+}
+
+/* Gold gradient text */
+.gold-text {
+    background: linear-gradient(120deg, #f2e8c9 0%, #D4AF37 45%, #997c25 65%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Thin contour / topographic lines - the signature motif */
+.contour-field {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.contour-field svg {
+    width: 100%;
+    height: 100%;
+}
+
+.contour-line {
+    fill: none;
+    stroke: url(#contourGrad);
+    stroke-width: 0.6;
+    opacity: 0.35;
+    stroke-dasharray: 12 6;
+    animation: dashFlow 40s linear infinite;
+}
+
+@keyframes dashFlow {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
+/* Custom underline link animation */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 1px;
+    background: #D4AF37;
+    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Glass card */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Card lift + glow */
+.lift-card {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+.lift-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 30px 60px -20px rgba(212, 175, 55, 0.15);
+}
+
+.img-parallax {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-parallax-wrap:hover .img-parallax {
+    transform: scale(1.08);
+}
+
+/* Marquee */
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile menu */
+#mobileMenu {
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+}
+
+#mobileMenu.hidden-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#mobileMenu .menu-item {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#mobileMenu.menu-open .menu-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar for a premium feel */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .marquee-track,
+    .contour-line,
+    .lift-card,
+    .img-parallax {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+}
